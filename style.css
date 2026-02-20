@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+#main-wrapper {
+    padding: 2.5rem 10%;
+}
+.hero__title {
+    font-size: 48px;
+    padding-bottom: 1.5rem;
+}
+.destinations__list {
+    display: grid;
+    grid-template-columns: repeat(4, 288px);
+    grid-template-rows: repeat(2, 360px);
+    grid-gap: 1rem;
+}
+.destinations__list img {
+    height: 288px;
+}
+figcaption {
+    height: 72px;
+    background-color: #CEF9FF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6%;
+}
+.heart__btn {
+    border: none;
+    background-color: #CEF9FF;
+}
+.heart__icon {
+
+}
+.active {
+    fill: red;
+    stroke: red;
+}

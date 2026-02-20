@@ -1,0 +1,46 @@
+/* function toggleHearts() {
+    const heartBtns = mainDom.querySelectorAll(".favorite__btn");
+
+    heartBtns.forEach((btn) => {
+        addEventListener("click", favorite);
+    })
+
+    function favorite(event) {
+        console.log(event.currentTarget);   
+    }
+} */
+
+function setLocalItem(key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
+}
+ 
+function getLocalItem(key) {
+    return JSON.parse(localStorage.getItem(key)) || [];
+}
+
+function toggleHearts() {
+    let heartDom = document.querySelectorAll(".heart");
+    if (heartDom.length == 0) return
+ 
+    heartDom.forEach(btn => {
+        btn.addEventListener("click", () => {
+            // find id
+            const id = btn.dataset.id;
+            // getLocalItem function definet i global.js
+            let favorites = getLocalItem("favorites");
+ 
+            // fjern den hvis den findes
+            if (favorites.includes(id)) {
+                // .filter() laver et nyt array. Den beholder kun værdier hvor fav !== id. Altså: den smider id væk
+                favorites = favorites.filter(fav => fav !== id);
+                btn.classList.remove("active");
+            } else {
+                // tilføj den hvis ikke findes
+                favorites.push(id);
+                btn.classList.add("active");
+            }
+            // funktion defineret i global.js
+            setLocalItem("favorites", favorites);
+        })
+    })
+}
