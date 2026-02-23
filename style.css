@@ -42,10 +42,6 @@ figcaption {
     border: none;
     background-color: #CEF9FF;
 }
-.heart__icon {
-
-}
-.active {
+.favorite.active .heart__icon path {
     fill: red;
-    stroke: red;
 }

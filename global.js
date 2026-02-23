@@ -1,15 +1,3 @@
-/* function toggleHearts() {
-    const heartBtns = mainDom.querySelectorAll(".favorite__btn");
-
-    heartBtns.forEach((btn) => {
-        addEventListener("click", favorite);
-    })
-
-    function favorite(event) {
-        console.log(event.currentTarget);   
-    }
-} */
-
 function setLocalItem(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
 }
@@ -19,7 +7,7 @@ function getLocalItem(key) {
 }
 
 function toggleHearts() {
-    let heartDom = document.querySelectorAll(".heart");
+    let heartDom = document.querySelectorAll(".heart__btn");
     if (heartDom.length == 0) return
  
     heartDom.forEach(btn => {
@@ -28,7 +16,6 @@ function toggleHearts() {
             const id = btn.dataset.id;
             // getLocalItem function definet i global.js
             let favorites = getLocalItem("favorites");
- 
             // fjern den hvis den findes
             if (favorites.includes(id)) {
                 // .filter() laver et nyt array. Den beholder kun værdier hvor fav !== id. Altså: den smider id væk
