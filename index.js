@@ -45,5 +45,6 @@ function showData(destinations) {
     ulDom.classList.add("destinations__list");
     mainDom.insertAdjacentElement("afterbegin", ulDom);
     ulDom.insertAdjacentHTML("beforeend", destinationsString);
+    setHearts();
     toggleHearts();
 }

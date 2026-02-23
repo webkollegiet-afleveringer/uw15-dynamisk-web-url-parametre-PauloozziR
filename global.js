@@ -6,6 +6,18 @@ function getLocalItem(key) {
     return JSON.parse(localStorage.getItem(key)) || [];
 }
 
+function setHearts() {
+    let heartDom = document.querySelectorAll(".heart__btn");
+    let favorites = getLocalItem("favorites");
+    if(!heartDom.length) return;
+    heartDom.forEach((heart) => {
+        const id = heart.dataset.id;
+        if(favorites.includes(id)) {
+            heart.classList.add("active");
+        }
+    })
+}
+
 function toggleHearts() {
     let heartDom = document.querySelectorAll(".heart__btn");
     if (heartDom.length == 0) return
